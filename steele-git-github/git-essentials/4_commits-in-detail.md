@@ -22,9 +22,27 @@
     - Much easier to read and nice way to look at the history. 
 
 ## Fixing Mistakes With Amend
-
+- This only works for amending your last commit. 
+- Supposed you just made a commit and then realized you forgot to include a file. 
+- Or, maybe you made a typo in the commit message that you want to correct. 
+- Rather than making a brand new separate commit, you can "redo" the previous commit using the `--amend` option. 
+- Ex
+    - `git commit -m "some commit"`
+    - `git add forgotten_file`
+    - `git commit --amend` <-- opens up the previous commit message where you can edit it in your IDE
+        - Make your change, save, and close. 
 
 ## Ignoring Files with .gitignore
+- We can tell git which files and directories to ignore in a given repository, using a .gitignore file. 
+- This is useful for files you NEVER want to commit, including:
+    - Secrets, API keys, credentials, etc. 
+    - Operating System files (.DS_Store on Mac)
+    - Log files
+    - Dependencies and Packages. 
+- Create a file called .gitignore in the root of a git repository. Inside the file, we can write patterns to tell git which files & folders to ignore:
+    - .DS_Store will ignore files named .DS_Store
+    - folderName/ will ignore an entire directory
+    - *.log will ignore any files with the .log extension. 
 
 
 
